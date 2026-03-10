@@ -1,11 +1,22 @@
 import java.util.Date;
 
-public class Notification {
+public abstract class Notification {
     private int notificationId;
     private Date createdOn;
     private String content;
-    
-    public boolean send() {
-        return false;
+
+    public Notification(int notificationId, String content) {
+        this.notificationId = notificationId;
+        this.content = content;
+        this.createdOn = new Date();
     }
+    
+    public int getNotificationId() { return notificationId; }
+    public void setNotificationId(int notificationId) { this.notificationId = notificationId; }
+    public Date getCreatedOn() { return createdOn; }
+    public void setCreatedOn(Date createdOn) { this.createdOn = createdOn; }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
+
+    public abstract boolean send();
 }

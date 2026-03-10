@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Itinerary {
@@ -8,15 +9,41 @@ public class Itinerary {
     private Date creationDate;
     private List<FlightReservation> reservations;
 
+    public Itinerary(String customerId, Airport startingAirport, Airport finalAirport, Date creationDate) {
+        this.customerId = customerId;
+        this.startingAirport = startingAirport;
+        this.finalAirport = finalAirport;
+        this.creationDate = creationDate;
+        this.reservations = new ArrayList<>();
+    }
+
+    public String getCustomerId() { return customerId; }
+    public void setCustomerId(String customerId) { this.customerId = customerId; }
+    public Airport getStartingAirport() { return startingAirport; }
+    public void setStartingAirport(Airport startingAirport) { this.startingAirport = startingAirport; }
+    public Airport getFinalAirport() { return finalAirport; }
+    public void setFinalAirport(Airport finalAirport) { this.finalAirport = finalAirport; }
+    public Date getCreationDate() { return creationDate; }
+    public void setCreationDate(Date creationDate) { this.creationDate = creationDate; }
+
+    public void addReservation(FlightReservation reservation) {
+        this.reservations.add(reservation);
+    }
+
     public List<FlightReservation> getReservations() {
         return this.reservations;
     }
 
     public boolean makeReservation() {
-        return false;
+        System.out.println("Making reservation for itinerary...");
+        for (FlightReservation req : reservations) {
+            req.setStatus(ReservationStatus.CONFIRMED);
+        }
+        return true;
     }
 
     public boolean makePayment() {
-        return false;
+        System.out.println("Processing payment for itinerary...");
+        return true;
     }
 }
