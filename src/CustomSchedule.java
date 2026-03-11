@@ -1,17 +1,18 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.sql.Time;
 
 public class CustomSchedule {
-    private Date customDate;
+    private LocalDate customLocalDate;
     private Time departureTime;
 
-    public CustomSchedule(Date customDate, Time departureTime) {
-        this.customDate = customDate;
+    public CustomSchedule(LocalDate customLocalDate, Time departureTime) {
+        this.customLocalDate = customLocalDate;
         this.departureTime = departureTime;
     }
 
-    public Date getCustomDate() { return customDate; }
-    public void setCustomDate(Date customDate) { this.customDate = customDate; }
+    public LocalDate getCustomLocalDate() { return customLocalDate; }
+    public void setCustomLocalDate(LocalDate customLocalDate) { this.customLocalDate = customLocalDate; }
     public Time getDepartureTime() { return departureTime; }
     public void setDepartureTime(Time departureTime) { this.departureTime = departureTime; }
 }

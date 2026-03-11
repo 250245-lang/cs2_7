@@ -1,20 +1,21 @@
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class FlightReservation {
     private String reservationNumber;
     private FlightInstance flight;
     private Map<Passenger, FlightSeat> seatMap;
-    private Date creationDate;
+    private LocalDateTime creationLocalDateTime;
     private ReservationStatus status;
 
-    public FlightReservation(String reservationNumber, FlightInstance flight, Date creationDate, ReservationStatus status) {
+    public FlightReservation(String reservationNumber, FlightInstance flight, LocalDateTime creationLocalDateTime, ReservationStatus status) {
         this.reservationNumber = reservationNumber;
         this.flight = flight;
-        this.creationDate = creationDate;
+        this.creationLocalDateTime = creationLocalDateTime;
         this.status = status;
         this.seatMap = new HashMap<>();
     }
@@ -23,8 +24,8 @@ public class FlightReservation {
     public void setReservationNumber(String reservationNumber) { this.reservationNumber = reservationNumber; }
     public FlightInstance getFlight() { return flight; }
     public void setFlight(FlightInstance flight) { this.flight = flight; }
-    public Date getCreationDate() { return creationDate; }
-    public void setCreationDate(Date creationDate) { this.creationDate = creationDate; }
+    public LocalDateTime getCreationLocalDateTime() { return creationLocalDateTime; }
+    public void setCreationLocalDateTime(LocalDateTime creationLocalDateTime) { this.creationLocalDateTime = creationLocalDateTime; }
     public ReservationStatus getStatus() { return status; }
     public void setStatus(ReservationStatus status) { this.status = status; }
 

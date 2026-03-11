@@ -1,13 +1,14 @@
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 
 public class FlightInstance {
-    private Date departureTime;
+    private LocalDateTime departureTime;
     private String gate;
     private FlightStatus status;
     private Aircraft aircraft;
     private Flight flight;
 
-    public FlightInstance(Date departureTime, String gate, FlightStatus status, Aircraft aircraft, Flight flight) {
+    public FlightInstance(LocalDateTime departureTime, String gate, FlightStatus status, Aircraft aircraft, Flight flight) {
         this.departureTime = departureTime;
         this.gate = gate;
         this.status = status;
@@ -15,8 +16,8 @@ public class FlightInstance {
         this.flight = flight;
     }
 
-    public Date getDepartureTime() { return departureTime; }
-    public void setDepartureTime(Date departureTime) { this.departureTime = departureTime; }
+    public LocalDateTime getDepartureTime() { return departureTime; }
+    public void setDepartureTime(LocalDateTime departureTime) { this.departureTime = departureTime; }
     public String getGate() { return gate; }
     public void setGate(String gate) { this.gate = gate; }
     public FlightStatus getStatus() { return status; }

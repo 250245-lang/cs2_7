@@ -1,19 +1,20 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 
 public class Itinerary {
     private String customerId;
     private Airport startingAirport;
     private Airport finalAirport;
-    private Date creationDate;
+    private LocalDateTime creationLocalDateTime;
     private List<FlightReservation> reservations;
 
-    public Itinerary(String customerId, Airport startingAirport, Airport finalAirport, Date creationDate) {
+    public Itinerary(String customerId, Airport startingAirport, Airport finalAirport, LocalDateTime creationLocalDateTime) {
         this.customerId = customerId;
         this.startingAirport = startingAirport;
         this.finalAirport = finalAirport;
-        this.creationDate = creationDate;
+        this.creationLocalDateTime = creationLocalDateTime;
         this.reservations = new ArrayList<>();
     }
 
@@ -23,8 +24,8 @@ public class Itinerary {
     public void setStartingAirport(Airport startingAirport) { this.startingAirport = startingAirport; }
     public Airport getFinalAirport() { return finalAirport; }
     public void setFinalAirport(Airport finalAirport) { this.finalAirport = finalAirport; }
-    public Date getCreationDate() { return creationDate; }
-    public void setCreationDate(Date creationDate) { this.creationDate = creationDate; }
+    public LocalDateTime getCreationLocalDateTime() { return creationLocalDateTime; }
+    public void setCreationLocalDateTime(LocalDateTime creationLocalDateTime) { this.creationLocalDateTime = creationLocalDateTime; }
 
     public void addReservation(FlightReservation reservation) {
         this.reservations.add(reservation);

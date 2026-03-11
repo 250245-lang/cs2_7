@@ -1,11 +1,12 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Passenger {
     private String name;
     private String passportNumber;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public Passenger(String name, String passportNumber, Date dateOfBirth) {
+    public Passenger(String name, String passportNumber, LocalDate dateOfBirth) {
         this.name = name;
         this.passportNumber = passportNumber;
         this.dateOfBirth = dateOfBirth;
@@ -15,6 +16,6 @@ public class Passenger {
     public void setName(String name) { this.name = name; }
     public String getPassportNumber() { return passportNumber; }
     public void setPassportNumber(String passportNumber) { this.passportNumber = passportNumber; }
-    public Date getDateOfBirth() { return dateOfBirth; }
-    public void setDateOfBirth(Date dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public LocalDate getLocalDateOfBirth() { return dateOfBirth; }
+    public void setLocalDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
 }
